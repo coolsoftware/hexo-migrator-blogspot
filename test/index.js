@@ -60,7 +60,7 @@ describe('migrator', function() {
         ']<br />'+
         '</code></pre>\n'+
         '&lt;?php require_once __DIR__ . "/vendor/autoload.php"; ?&gt;<br />';
-        const prepared_content = prepareContent(content, true);
+        const prepared_content = prepareContent(content);
         prepared_content.includes('<br />\n').should.eql(true);
         prepared_content.includes('<br /> ').should.eql(false);
         prepared_content.includes('<br/> ').should.eql(false);
@@ -69,9 +69,8 @@ describe('migrator', function() {
         prepared_content.includes('&lt;?').should.eql(false);
         prepared_content.includes('?&gt;').should.eql(false);
         const content_md = md(prepared_content);
-        console.log(content_md);
+        //console.log(content_md);
         const post_md = postMd(content_md);
-        console.log(post_md);
     });
 
     it('prepare content 2', async () => {
@@ -80,13 +79,12 @@ describe('migrator', function() {
 "  font-size: 10pt;  color: #008080; } .sc5 {  font-family: 'Courier New';  font-size: 10pt;  color: #804000; } .sc9 {  font-family: 'Courier New';  font-size: 10pt;  font-weight: bold;  color: #0000FF; }"+
 " .sc13 {  font-family: 'Courier New';  font-size: 10pt;  font-weight: bold;  color: #000080; } .sc14 {  font-family: 'Courier New';  font-size: 10pt;  font-weight: bold; }"+
 " \u003C\/style\u003E"+"\u003Cspan class=\"sc9\"\u003Etest\u003C\/span\u003E\u003Cspan class=\"sc0\"\u003E  \u003C\/span\u003E"+"\u003C\/div\u003E";
-        const prepared_content = prepareContent(content, true);
+        const prepared_content = prepareContent(content);
         prepared_content.includes('<style').should.eql(false);
         prepared_content.includes('</style>').should.eql(false);
         const content_md = md(prepared_content);
-        console.log(content_md);
+        //console.log(content_md);
         const post_md = postMd(content_md);
-        console.log(post_md);
     });
     
     it('no argument', async () => {
@@ -126,7 +124,7 @@ describe('migrator', function() {
     
     it('helloworld.blogspot.com - url', async () => {
         await m({ _: ['https://hexomigrator.blogspot.com/']});
-        const exist = await exists(join(hexo.source_dir, '_posts', '2022', '02', 'hello-world.md'));
+        const exist = await exists(join(hexo.source_dir, '_posts', '2022', '01', 'hello-world.md'));
         exist.should.eql(true);
     });
 
