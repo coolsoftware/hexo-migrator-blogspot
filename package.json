@@ -1,6 +1,6 @@
 {
   "name": "hexo-migrator-blogspot",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Blogspot migrator plugin for Hexo",
   "main": "index.js",
   "directories": {
@@ -15,7 +15,8 @@
     "blogger",
     "migrator"
   ],
-  "author": "Vitaly Yakovlev <vitaly@coolsoftware.ru> (https://blog.coolsoftware.ru/)",
+  "repository": "coolsoftware/hexo-migrator-blogspot",
+  "author": "Vitaly Yakovlev <vitalyyakovlev777@gmail.com> (https://blog.coolsoftware.ru/)",
   "license": "MIT",
   "dependencies": {
     "async": "^3.2.3",
