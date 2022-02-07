@@ -1,5 +1,7 @@
 # hexo-migrator-blogspot
 
+[![npm version](https://badge.fury.io/js/hexo-migrator-blogspot.svg)](https://badge.fury.io/js/hexo-migrator-blogspot)
+
 Migrate blog from blogspot (blogger) to [Hexo](https://hexo.io/).
 
 ## Install
