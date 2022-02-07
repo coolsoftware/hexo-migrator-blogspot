@@ -129,6 +129,8 @@ describe('migrator', function() {
     });
 
     it('local file', async () => {
-        await m({ _: ['C:\\Users\\vitaly\\Downloads\\blog.coolsoftware.json', 5]});
+        await m({ _: [join(__dirname, 'fixtures/feeds.json')]});
+        const exist = await exists(join(hexo.source_dir, '_posts', '2022', '01', 'hello-world.md'));
+        exist.should.eql(true);
     });
 });
